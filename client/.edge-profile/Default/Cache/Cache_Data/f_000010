@@ -1,0 +1,185 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/DashboardCharts.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b8dd7e16"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+import { Bar, BarChart, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "/node_modules/.vite/deps/recharts.js?v=b8dd7e16";
+const colors = ["#0f766e", "#f59e0b", "#2563eb", "#dc2626", "#7c3aed"];
+function EmptyChart({ label }) {
+  return /* @__PURE__ */ jsxDEV("div", { className: "grid h-full min-h-64 place-items-center rounded-lg border border-dashed border-slate-300 bg-slate-50/70 p-6 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-950/50 dark:text-slate-400", children: /* @__PURE__ */ jsxDEV("span", { children: label }, void 0, false, {
+    fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+    lineNumber: 27,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+    lineNumber: 26,
+    columnNumber: 5
+  }, this);
+}
+_c = EmptyChart;
+export default function DashboardCharts({ skills = [], cities = [] }) {
+  return /* @__PURE__ */ jsxDEV("div", { className: "grid gap-4 xl:grid-cols-2", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "page-card p-4 sm:p-5", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between", children: [
+        /* @__PURE__ */ jsxDEV("h2", { className: "text-lg font-semibold text-brand-navy dark:text-white", children: "Skills Distribution" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 37,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { className: "badge", children: [
+          skills.length,
+          " skills"
+        ] }, void 0, true, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 38,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 36,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "mt-4 h-72 sm:h-80", children: skills.length === 0 ? /* @__PURE__ */ jsxDEV(EmptyChart, { label: "Skill data will appear after registrations" }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 42,
+        columnNumber: 11
+      }, this) : /* @__PURE__ */ jsxDEV(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ jsxDEV(PieChart, { children: [
+        /* @__PURE__ */ jsxDEV(Pie, { data: skills, dataKey: "count", nameKey: "_id", innerRadius: "52%", outerRadius: "78%", paddingAngle: 3, children: skills.map(
+          (entry, index) => /* @__PURE__ */ jsxDEV(Cell, { fill: colors[index % colors.length] }, entry._id, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+            lineNumber: 48,
+            columnNumber: 17
+          }, this)
+        ) }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 46,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV(Tooltip, {}, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 51,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV(Legend, { iconType: "circle" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 52,
+          columnNumber: 17
+        }, this)
+      ] }, void 0, true, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 45,
+        columnNumber: 15
+      }, this) }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 44,
+        columnNumber: 11
+      }, this) }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 40,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+      lineNumber: 35,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "page-card p-4 sm:p-5", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between", children: [
+        /* @__PURE__ */ jsxDEV("h2", { className: "text-lg font-semibold text-brand-navy dark:text-white", children: "City-wise Volunteers" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 60,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { className: "badge", children: [
+          cities.length,
+          " cities"
+        ] }, void 0, true, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 61,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 59,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "mt-4 h-72 sm:h-80", children: cities.length === 0 ? /* @__PURE__ */ jsxDEV(EmptyChart, { label: "City data will appear after registrations" }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 65,
+        columnNumber: 11
+      }, this) : /* @__PURE__ */ jsxDEV(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ jsxDEV(BarChart, { data: cities, margin: { top: 10, right: 8, left: -18, bottom: 6 }, children: [
+        /* @__PURE__ */ jsxDEV(XAxis, { dataKey: "_id", tickLine: false, axisLine: false, tick: { fontSize: 12 } }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 69,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV(YAxis, { allowDecimals: false, tickLine: false, axisLine: false, tick: { fontSize: 12 } }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 70,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV(Tooltip, {}, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 71,
+          columnNumber: 17
+        }, this),
+        /* @__PURE__ */ jsxDEV(Bar, { dataKey: "count", fill: "#0f766e", radius: [6, 6, 0, 0], barSize: 34 }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+          lineNumber: 72,
+          columnNumber: 17
+        }, this)
+      ] }, void 0, true, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 68,
+        columnNumber: 15
+      }, this) }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 67,
+        columnNumber: 11
+      }, this) }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+        lineNumber: 63,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+      lineNumber: 58,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx",
+    lineNumber: 34,
+    columnNumber: 5
+  }, this);
+}
+_c2 = DashboardCharts;
+var _c, _c2;
+$RefreshReg$(_c, "EmptyChart");
+$RefreshReg$(_c2, "DashboardCharts");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/DashboardCharts.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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TUFBTSxFQUFFQyxVQUFVLEdBQUcsS0FBNUU7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUE4RTtBQUFBLFFBQzlFLHVCQUFDLFNBQU0sZUFBZSxPQUFPLFVBQVUsT0FBTyxVQUFVLE9BQU8sTUFBTSxFQUFFQSxVQUFVLEdBQUcsS0FBcEY7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFzRjtBQUFBLFFBQ3RGLHVCQUFDLGFBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFRO0FBQUEsUUFDUix1QkFBQyxPQUFJLFNBQVEsU0FBUSxNQUFLLFdBQVUsUUFBUSxDQUFDLEdBQUcsR0FBRyxHQUFHLENBQUMsR0FBRyxTQUFTLE1BQW5FO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBc0U7QUFBQSxXQUp4RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBS0EsS0FORjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBT0EsS0FYSjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBYUE7QUFBQSxTQWxCRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBbUJBO0FBQUEsT0EzQ0Y7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQTRDQTtBQUVKO0FBQUNDLE1BaER1QmI7QUFBZSxJQUFBRCxJQUFBYztBQUFBLGFBQUFkLElBQUE7QUFBQSxhQUFBYyxLQUFBIiwibmFtZXMiOlsiQmFyIiwiQmFyQ2hhcnQiLCJDZWxsIiwiTGVnZW5kIiwiUGllIiwiUGllQ2hhcnQiLCJSZXNwb25zaXZlQ29udGFpbmVyIiwiVG9vbHRpcCIsIlhBeGlzIiwiWUF4aXMiLCJjb2xvcnMiLCJFbXB0eUNoYXJ0IiwibGFiZWwiLCJfYyIsIkRhc2hib2FyZENoYXJ0cyIsInNraWxscyIsImNpdGllcyIsImxlbmd0aCIsIm1hcCIsImVudHJ5IiwiaW5kZXgiLCJfaWQiLCJ0b3AiLCJyaWdodCIsImxlZnQiLCJib3R0b20iLCJmb250U2l6ZSIsIl9jMiJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJEYXNoYm9hcmRDaGFydHMuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJhciwgQmFyQ2hhcnQsIENlbGwsIExlZ2VuZCwgUGllLCBQaWVDaGFydCwgUmVzcG9uc2l2ZUNvbnRhaW5lciwgVG9vbHRpcCwgWEF4aXMsIFlBeGlzIH0gZnJvbSBcInJlY2hhcnRzXCI7XG5cbmNvbnN0IGNvbG9ycyA9IFtcIiMwZjc2NmVcIiwgXCIjZjU5ZTBiXCIsIFwiIzI1NjNlYlwiLCBcIiNkYzI2MjZcIiwgXCIjN2MzYWVkXCJdO1xuXG5mdW5jdGlvbiBFbXB0eUNoYXJ0KHsgbGFiZWwgfSkge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBoLWZ1bGwgbWluLWgtNjQgcGxhY2UtaXRlbXMtY2VudGVyIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1kYXNoZWQgYm9yZGVyLXNsYXRlLTMwMCBiZy1zbGF0ZS01MC83MCBwLTYgdGV4dC1jZW50ZXIgdGV4dC1zbSB0ZXh0LXNsYXRlLTUwMCBkYXJrOmJvcmRlci1zbGF0ZS03MDAgZGFyazpiZy1zbGF0ZS05NTAvNTAgZGFyazp0ZXh0LXNsYXRlLTQwMFwiPlxuICAgICAgPHNwYW4+e2xhYmVsfTwvc3Bhbj5cbiAgICA8L2Rpdj5cbiAgKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gRGFzaGJvYXJkQ2hhcnRzKHsgc2tpbGxzID0gW10sIGNpdGllcyA9IFtdIH0pIHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgZ2FwLTQgeGw6Z3JpZC1jb2xzLTJcIj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwicGFnZS1jYXJkIHAtNCBzbTpwLTVcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGdhcC0yIHNtOmZsZXgtcm93IHNtOml0ZW1zLWNlbnRlciBzbTpqdXN0aWZ5LWJldHdlZW5cIj5cbiAgICAgICAgICA8aDIgY2xhc3NOYW1lPVwidGV4dC1sZyBmb250LXNlbWlib2xkIHRleHQtYnJhbmQtbmF2eSBkYXJrOnRleHQtd2hpdGVcIj5Ta2lsbHMgRGlzdHJpYnV0aW9uPC9oMj5cbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJiYWRnZVwiPntza2lsbHMubGVuZ3RofSBza2lsbHM8L3NwYW4+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTQgaC03MiBzbTpoLTgwXCI+XG4gICAgICAgICAge3NraWxscy5sZW5ndGggPT09IDAgPyAoXG4gICAgICAgICAgICA8RW1wdHlDaGFydCBsYWJlbD1cIlNraWxsIGRhdGEgd2lsbCBhcHBlYXIgYWZ0ZXIgcmVnaXN0cmF0aW9uc1wiIC8+XG4gICAgICAgICAgKSA6IChcbiAgICAgICAgICAgIDxSZXNwb25zaXZlQ29udGFpbmVyIHdpZHRoPVwiMTAwJVwiIGhlaWdodD1cIjEwMCVcIj5cbiAgICAgICAgICAgICAgPFBpZUNoYXJ0PlxuICAgICAgICAgICAgICAgIDxQaWUgZGF0YT17c2tpbGxzfSBkYXRhS2V5PVwiY291bnRcIiBuYW1lS2V5PVwiX2lkXCIgaW5uZXJSYWRpdXM9XCI1MiVcIiBvdXRlclJhZGl1cz1cIjc4JVwiIHBhZGRpbmdBbmdsZT17M30+XG4gICAgICAgICAgICAgICAgICB7c2tpbGxzLm1hcCgoZW50cnksIGluZGV4KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgIDxDZWxsIGtleT17ZW50cnkuX2lkfSBmaWxsPXtjb2xvcnNbaW5kZXggJSBjb2xvcnMubGVuZ3RoXX0gLz5cbiAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgIDwvUGllPlxuICAgICAgICAgICAgICAgIDxUb29sdGlwIC8+XG4gICAgICAgICAgICAgICAgPExlZ2VuZCBpY29uVHlwZT1cImNpcmNsZVwiIC8+XG4gICAgICAgICAgICAgIDwvUGllQ2hhcnQ+XG4gICAgICAgICAgICA8L1Jlc3BvbnNpdmVDb250YWluZXI+XG4gICAgICAgICAgKX1cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwicGFnZS1jYXJkIHAtNCBzbTpwLTVcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGdhcC0yIHNtOmZsZXgtcm93IHNtOml0ZW1zLWNlbnRlciBzbTpqdXN0aWZ5LWJldHdlZW5cIj5cbiAgICAgICAgICA8aDIgY2xhc3NOYW1lPVwidGV4dC1sZyBmb250LXNlbWlib2xkIHRleHQtYnJhbmQtbmF2eSBkYXJrOnRleHQtd2hpdGVcIj5DaXR5LXdpc2UgVm9sdW50ZWVyczwvaDI+XG4gICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmFkZ2VcIj57Y2l0aWVzLmxlbmd0aH0gY2l0aWVzPC9zcGFuPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtdC00IGgtNzIgc206aC04MFwiPlxuICAgICAgICAgIHtjaXRpZXMubGVuZ3RoID09PSAwID8gKFxuICAgICAgICAgICAgPEVtcHR5Q2hhcnQgbGFiZWw9XCJDaXR5IGRhdGEgd2lsbCBhcHBlYXIgYWZ0ZXIgcmVnaXN0cmF0aW9uc1wiIC8+XG4gICAgICAgICAgKSA6IChcbiAgICAgICAgICAgIDxSZXNwb25zaXZlQ29udGFpbmVyIHdpZHRoPVwiMTAwJVwiIGhlaWdodD1cIjEwMCVcIj5cbiAgICAgICAgICAgICAgPEJhckNoYXJ0IGRhdGE9e2NpdGllc30gbWFyZ2luPXt7IHRvcDogMTAsIHJpZ2h0OiA4LCBsZWZ0OiAtMTgsIGJvdHRvbTogNiB9fT5cbiAgICAgICAgICAgICAgICA8WEF4aXMgZGF0YUtleT1cIl9pZFwiIHRpY2tMaW5lPXtmYWxzZX0gYXhpc0xpbmU9e2ZhbHNlfSB0aWNrPXt7IGZvbnRTaXplOiAxMiB9fSAvPlxuICAgICAgICAgICAgICAgIDxZQXhpcyBhbGxvd0RlY2ltYWxzPXtmYWxzZX0gdGlja0xpbmU9e2ZhbHNlfSBheGlzTGluZT17ZmFsc2V9IHRpY2s9e3sgZm9udFNpemU6IDEyIH19IC8+XG4gICAgICAgICAgICAgICAgPFRvb2x0aXAgLz5cbiAgICAgICAgICAgICAgICA8QmFyIGRhdGFLZXk9XCJjb3VudFwiIGZpbGw9XCIjMGY3NjZlXCIgcmFkaXVzPXtbNiwgNiwgMCwgMF19IGJhclNpemU9ezM0fSAvPlxuICAgICAgICAgICAgICA8L0JhckNoYXJ0PlxuICAgICAgICAgICAgPC9SZXNwb25zaXZlQ29udGFpbmVyPlxuICAgICAgICAgICl9XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gICk7XG59XG4iXSwiZmlsZSI6IkQ6L0Rlc2t0b3AvT25lRHJpdmUvRGVza3RvcC9OYXlhcGFua2ggaW50ZXJuc2hpcC9jbGllbnQvc3JjL2NvbXBvbmVudHMvRGFzaGJvYXJkQ2hhcnRzLmpzeCJ9

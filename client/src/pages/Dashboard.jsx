@@ -44,22 +44,23 @@ export default function Dashboard() {
 
   return (
     <div className="grid gap-6">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div className="flex flex-col gap-3 xl:flex-row xl:items-end xl:justify-between">
         <div>
-          <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+          <p className="eyebrow">Live Overview</p>
+          <h1 className="mt-2 text-2xl font-bold text-brand-navy dark:text-white sm:text-3xl">Admin Dashboard</h1>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Volunteer summary, charts, and recent activity.</p>
         </div>
         {offline ? (
-          <span className="rounded-md bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800 dark:bg-amber-950 dark:text-amber-200">
+          <span className="w-fit rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
             Backend not connected
           </span>
         ) : null}
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard title="Total Volunteers" value={stats.totalVolunteers} icon={Users} tone="teal" />
-        <StatCard title="Total Cities" value={stats.totalCities} icon={MapPinned} tone="blue" />
-        <StatCard title="Total Skills" value={stats.totalSkills} icon={BadgeCheck} tone="amber" />
-        <StatCard title="Active Volunteers" value={stats.activeVolunteers} icon={UserCheck} tone="rose" />
+        <StatCard title="Total Volunteers" value={stats.totalVolunteers} helper="All registered profiles" icon={Users} tone="teal" />
+        <StatCard title="Total Cities" value={stats.totalCities} helper="Unique city coverage" icon={MapPinned} tone="blue" />
+        <StatCard title="Total Skills" value={stats.totalSkills} helper="Skill categories tracked" icon={BadgeCheck} tone="amber" />
+        <StatCard title="Active Volunteers" value={stats.activeVolunteers} helper="Currently available" icon={UserCheck} tone="rose" />
       </div>
       <DashboardCharts skills={stats.skillsDistribution} cities={stats.cityDistribution} />
       <RecommendationBox />

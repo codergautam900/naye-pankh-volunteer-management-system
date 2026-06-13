@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound.jsx";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#f7f8f4] text-slate-950 transition-colors dark:bg-[#080d18] dark:text-slate-50">
+    <div className="min-h-screen bg-slate-50 text-slate-950 transition-colors dark:bg-[#080d18] dark:text-slate-50">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
