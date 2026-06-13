@@ -1,5 +1,5 @@
 import cors from "cors";
-import dotenv from "dotenv";
+import "dotenv/config";
 import express from "express";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
@@ -7,8 +7,6 @@ import dashboardRoutes from "./routes/dashboardRoutes.js";
 import exportRoutes from "./routes/exportRoutes.js";
 import volunteerRoutes from "./routes/volunteerRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
-
-dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -34,4 +32,3 @@ app.use(errorHandler);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
