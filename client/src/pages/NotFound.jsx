@@ -1,0 +1,14 @@
+import { Link } from "react-router-dom";
+
+export default function NotFound() {
+  return (
+    <main className="mx-auto max-w-2xl px-4 py-16 text-center">
+      <h1 className="text-3xl font-bold">Page not found</h1>
+      <p className="mt-3 text-slate-500 dark:text-slate-400">The page you are looking for does not exist.</p>
+      <Link to="/" className="btn-primary mt-6">
+        Go Home
+      </Link>
+    </main>
+  );
+}
+
