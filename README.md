@@ -48,9 +48,12 @@ server/
 
 Install dependencies separately in both apps.
 
+Create `server/.env` from `server/.env.example` and fill in MongoDB, JWT, Cloudinary, and admin credentials before starting the backend.
+
 ```bash
 cd server
 npm install
+npm run seed:admin
 npm run dev
 ```
 
@@ -60,5 +63,4 @@ npm install
 npm run dev
 ```
 
-Copy `.env.example` files before running.
-
+Admin access is created from the `ADMIN_EMAIL` and `ADMIN_PASSWORD` values in `server/.env`. Demo credentials should be shared privately for evaluation and should not be committed to the repository.
