@@ -1,3 +1,8 @@
+/**
+ * Volunteer Controller - Handles all volunteer-related operations
+ * Includes CRUD operations, image uploads, email notifications, and activity tracking
+ */
+
 import ActivityLog from "../models/ActivityLog.js";
 import Volunteer from "../models/Volunteer.js";
 import { deleteFromCloudinary } from "../utils/deleteFromCloudinary.js";
@@ -5,6 +10,14 @@ import { recommendDepartment } from "../utils/recommendDepartment.js";
 import { sendEmail } from "../utils/sendEmail.js";
 import { uploadToCloudinary } from "../utils/uploadToCloudinary.js";
 
+/**
+ * Create a new volunteer registration
+ * - Validates email uniqueness
+ * - Uploads profile image to Cloudinary if provided
+ * - Recommends department based on primary skill
+ * - Sends welcome email notification
+ * - Logs activity for audit trail
+ */
 export const createVolunteer = async (req, res, next) => {
   let uploadedImage;
 
@@ -19,6 +32,7 @@ export const createVolunteer = async (req, res, next) => {
     const skills = req.body.skills;
     let profileImage;
 
+    // Upload profile image to Cloudinary if provided
     if (req.file) {
       uploadedImage = await uploadToCloudinary(req.file.buffer);
       profileImage = {
@@ -27,6 +41,7 @@ export const createVolunteer = async (req, res, next) => {
       };
     }
 
+    // Create volunteer record with auto-recommended department
     const volunteer = await Volunteer.create({
       ...req.body,
       skills,
@@ -34,12 +49,14 @@ export const createVolunteer = async (req, res, next) => {
       recommendedDepartment: recommendDepartment(skills[0])
     });
 
+    // Log volunteer creation activity
     await ActivityLog.create({
       action: "Volunteer Created",
       volunteer: volunteer._id,
       metadata: { email: volunteer.email }
     });
 
+    // Send welcome email (non-blocking - failure doesn't affect registration)
     await sendEmail({
       to: volunteer.email,
       subject: "Thank you for joining NayePankh Foundation!",
@@ -50,6 +67,7 @@ export const createVolunteer = async (req, res, next) => {
 
     res.status(201).json({ message: "Volunteer registered successfully", volunteer });
   } catch (error) {
+    // Cleanup: Remove uploaded image if volunteer creation failed
     if (uploadedImage?.public_id) {
       await deleteFromCloudinary(uploadedImage.public_id).catch(() => null);
     }
@@ -58,30 +76,44 @@ export const createVolunteer = async (req, res, next) => {
   }
 };
 
+/**
+ * Get all volunteers with advanced filtering, searching, and pagination
+ * Supports filters: search (name/email), city, skill, status
+ * Supports sorting: latest, oldest, name, city
+ * Implements pagination with safe limits
+ */
 export const getVolunteers = async (req, res, next) => {
   try {
     const { search = "", city = "", skill = "", status = "", sort = "latest", page = 1, limit = 8 } = req.query;
     const query = {};
 
+    // Build search query (case-insensitive)
     if (search) {
       query.$or = [
         { fullName: { $regex: search, $options: "i" } },
         { email: { $regex: search, $options: "i" } }
       ];
     }
+
+    // Apply filters
     if (city) query.city = { $regex: city, $options: "i" };
     if (skill) query.skills = { $regex: skill, $options: "i" };
     if (status === "active") query.isActive = true;
     if (status === "inactive") query.isActive = false;
 
+    // Validate and sanitize pagination parameters
     const currentPage = Math.max(Number(page) || 1, 1);
     const pageSize = Math.min(Math.max(Number(limit) || 8, 1), 50);
+
+    // Define sort options
     const sortMap = {
       latest: { createdAt: -1 },
       oldest: { createdAt: 1 },
       name: { fullName: 1 },
       city: { city: 1, fullName: 1 }
     };
+
+    // Execute query with pagination
     const total = await Volunteer.countDocuments(query);
     const volunteers = await Volunteer.find(query)
       .sort(sortMap[sort] || sortMap.latest)
