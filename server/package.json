@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
+    "build": "cd ../client && npm install && npm run build && cd ../server && npm install",
     "seed:admin": "node seed/adminSeed.js",
     "seed:demo": "node seed/demoSeed.js"
   },

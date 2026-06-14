@@ -2,6 +2,32 @@
 
 This guide provides step-by-step instructions for deploying the NayePankh VMS to production.
 
+## 🎯 Deployment Options
+
+### ⭐ **Option 1: SINGLE DEPLOYMENT (Recommended) - One URL for Everything!**
+
+**Best for:** Easiest, cheapest, no CORS issues  
+**Result:** Everything runs from `https://your-app.onrender.com`
+
+👉 **See: [SINGLE_DEPLOYMENT_SETUP.md](./SINGLE_DEPLOYMENT_SETUP.md)** for complete guide
+
+**Quick Process:**
+1. Build frontend: `npm run build` in client
+2. Setup is done (server.js already configured)
+3. Deploy backend to Render (it serves frontend too!)
+4. Single URL works for everything ✅
+
+---
+
+### Option 2: Separate Deployment - Frontend + Backend Different URLs
+
+**Best for:** Advanced, separate scaling  
+**Result:** Frontend on Vercel, Backend on Render
+
+Use this section below if you prefer separate deployments.
+
+---
+
 ## Prerequisites
 
 ✅ GitHub repository created and code pushed  
@@ -11,7 +37,9 @@ This guide provides step-by-step instructions for deploying the NayePankh VMS to
 
 ---
 
-## Option 1: Render + Vercel (Recommended)
+## Option 2A: Render + Vercel (Separate Deployments)
+
+## Option 2A: Render + Vercel (Separate Deployments)
 
 ### Backend: Deploy to Render
 
@@ -102,7 +130,7 @@ npm run lint   # Check for errors
 
 ---
 
-## Option 2: DigitalOcean App Platform
+## Option 2B: DigitalOcean App Platform (Separate Deployments)
 
 ### Deploy Full Stack
 
@@ -136,13 +164,13 @@ npm run lint   # Check for errors
 
 ---
 
-## Option 3: Heroku (Free Tier Ending)
+## Option 4: Heroku (Deprecated - Not Recommended)
 
-⚠️ Heroku free tier has ended. Use Render or DigitalOcean instead.
+⚠️ Heroku free tier has ended. Use Option 1 or 2B instead.
 
 ---
 
-## Option 4: AWS (EC2 + S3)
+## Option 3: AWS (EC2 + S3) - Separate Deployments
 
 ### Backend: Deploy to EC2
 
