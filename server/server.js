@@ -46,9 +46,15 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Root endpoint
+// ===== FRONTEND SERVING (Single Deployment) =====
+// Serve static files from client/dist folder (built React app)
+const publicPath = path.join(__dirname, "../client/dist");
+console.log("📁 Serving static files from:", publicPath);
+app.use(express.static(publicPath));
+
+// Root endpoint - serve index.html for SPA
 app.get("/", (req, res) => {
-  res.json({ message: "NayePankh Volunteer Management API is running" });
+  res.sendFile(path.join(publicPath, "index.html"));
 });
 
 // Health check endpoint - used for monitoring and deployment verification
@@ -69,11 +75,6 @@ app.use("/api/auth", authLimiter, authRoutes);
 app.use("/api/volunteers", volunteerRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/exports", exportRoutes);
-
-// ===== FRONTEND SERVING (Single Deployment) =====
-// Serve static files from public folder (built React app)
-const publicPath = path.join(__dirname, "../client/dist");
-app.use(express.static(publicPath));
 
 // SPA routing - Serve index.html for all non-API routes
 // This allows React Router to handle all routes on frontend
