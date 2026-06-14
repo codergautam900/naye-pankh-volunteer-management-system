@@ -1,6 +1,9 @@
-import { BadgeCheck, CalendarDays, Mail, MapPin, Pencil, Phone, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { BadgeCheck, CalendarDays, Eye, Mail, MapPin, MoreVertical, Pencil, Phone, Trash2 } from "lucide-react";
 
-export default function VolunteerTable({ volunteers = [], onEdit, onDelete, deletingId }) {
+export default function VolunteerTable({ volunteers = [], onView, onEdit, onDelete, deletingId }) {
+  const [openMenuId, setOpenMenuId] = useState("");
+
   if (volunteers.length === 0) {
     return (
       <div className="page-card grid min-h-52 place-items-center p-8 text-center">
@@ -17,7 +20,7 @@ export default function VolunteerTable({ volunteers = [], onEdit, onDelete, dele
 
   return (
     <>
-      <div className="page-card hidden overflow-hidden lg:block">
+      <div className="page-card hidden lg:block">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[980px] text-left text-sm">
             <thead className="bg-slate-100 text-xs uppercase text-slate-600 dark:bg-slate-800 dark:text-slate-300">
@@ -73,19 +76,45 @@ export default function VolunteerTable({ volunteers = [], onEdit, onDelete, dele
                   </span>
                 </td>
                 <td className="px-4 py-3">
-                  <div className="flex justify-end gap-2">
-                    <button type="button" className="btn-secondary min-h-9 px-3 py-1.5" onClick={() => onEdit(volunteer)} aria-label="Edit volunteer">
-                      <Pencil size={15} />
-                    </button>
+                  <div className="relative flex justify-end">
                     <button
                       type="button"
-                      className="btn-secondary min-h-9 px-3 py-1.5 text-red-600"
-                      onClick={() => onDelete(volunteer._id)}
-                      disabled={deletingId === volunteer._id}
-                      aria-label="Delete volunteer"
+                      className="btn-secondary min-h-9 px-3 py-1.5"
+                      onClick={() => setOpenMenuId((current) => (current === volunteer._id ? "" : volunteer._id))}
+                      aria-label="Open volunteer actions"
                     >
-                      <Trash2 size={15} />
+                      <MoreVertical size={15} />
                     </button>
+                    {openMenuId === volunteer._id ? (
+                      <div className="absolute right-0 top-10 z-20 w-44 rounded-lg border border-slate-200 bg-white p-1.5 shadow-xl shadow-slate-900/10 dark:border-slate-700 dark:bg-slate-950">
+                        <MenuButton
+                          icon={Eye}
+                          label="View profile"
+                          onClick={() => {
+                            setOpenMenuId("");
+                            onView(volunteer);
+                          }}
+                        />
+                        <MenuButton
+                          icon={Pencil}
+                          label="Edit details"
+                          onClick={() => {
+                            setOpenMenuId("");
+                            onEdit(volunteer);
+                          }}
+                        />
+                        <MenuButton
+                          icon={Trash2}
+                          label="Delete"
+                          danger
+                          disabled={deletingId === volunteer._id}
+                          onClick={() => {
+                            setOpenMenuId("");
+                            onDelete(volunteer);
+                          }}
+                        />
+                      </div>
+                    ) : null}
                   </div>
                 </td>
               </tr>
@@ -151,6 +180,10 @@ export default function VolunteerTable({ volunteers = [], onEdit, onDelete, dele
                     <span className="font-semibold">{volunteer.recommendedDepartment || "Not assigned"}</span>
                   </p>
                   <div className="flex gap-2">
+                    <button type="button" className="btn-secondary min-h-10 flex-1 px-3 py-1.5 sm:flex-none" onClick={() => onView(volunteer)}>
+                      <Eye size={15} />
+                      View
+                    </button>
                     <button type="button" className="btn-secondary min-h-10 flex-1 px-3 py-1.5 sm:flex-none" onClick={() => onEdit(volunteer)}>
                       <Pencil size={15} />
                       Edit
@@ -158,7 +191,7 @@ export default function VolunteerTable({ volunteers = [], onEdit, onDelete, dele
                     <button
                       type="button"
                       className="btn-secondary min-h-10 flex-1 px-3 py-1.5 text-red-600 sm:flex-none"
-                      onClick={() => onDelete(volunteer._id)}
+                      onClick={() => onDelete(volunteer)}
                       disabled={deletingId === volunteer._id}
                     >
                       <Trash2 size={15} />
@@ -172,5 +205,21 @@ export default function VolunteerTable({ volunteers = [], onEdit, onDelete, dele
         ))}
       </div>
     </>
+  );
+}
+
+function MenuButton({ icon: Icon, label, danger = false, disabled = false, onClick }) {
+  return (
+    <button
+      type="button"
+      className={`flex w-full items-center gap-2 rounded-md px-3 py-2 text-left text-sm font-semibold transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:bg-slate-800 ${
+        danger ? "text-red-600 dark:text-red-300" : "text-slate-700 dark:text-slate-200"
+      }`}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      <Icon size={15} />
+      {label}
+    </button>
   );
 }

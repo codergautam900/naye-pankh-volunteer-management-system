@@ -19,6 +19,11 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: 6
+    },
+    role: {
+      type: String,
+      enum: ["super_admin", "admin", "viewer"],
+      default: "admin"
     }
   },
   { timestamps: true }
@@ -37,4 +42,3 @@ adminSchema.methods.matchPassword = function matchPassword(password) {
 const Admin = mongoose.model("Admin", adminSchema);
 
 export default Admin;
-

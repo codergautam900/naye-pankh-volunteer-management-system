@@ -10,9 +10,9 @@ function EmptyChart({ label }) {
   );
 }
 
-export default function DashboardCharts({ skills = [], cities = [] }) {
+export default function DashboardCharts({ skills = [], cities = [], availability = [] }) {
   return (
-    <div className="grid gap-4 xl:grid-cols-2">
+    <div className="grid gap-4 xl:grid-cols-3">
       <div className="page-card p-4 sm:p-5">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-lg font-semibold text-brand-navy dark:text-white">Skills Distribution</h2>
@@ -52,6 +52,29 @@ export default function DashboardCharts({ skills = [], cities = [] }) {
                 <Tooltip />
                 <Bar dataKey="count" fill="#0f766e" radius={[6, 6, 0, 0]} barSize={34} />
               </BarChart>
+            </ResponsiveContainer>
+          )}
+        </div>
+      </div>
+      <div className="page-card p-4 sm:p-5">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <h2 className="text-lg font-semibold text-brand-navy dark:text-white">Availability Mix</h2>
+          <span className="badge">{availability.length} modes</span>
+        </div>
+        <div className="mt-4 h-72 sm:h-80">
+          {availability.length === 0 ? (
+            <EmptyChart label="Availability data will appear after registrations" />
+          ) : (
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie data={availability} dataKey="count" nameKey="_id" outerRadius="76%" paddingAngle={4}>
+                  {availability.map((entry, index) => (
+                    <Cell key={entry._id} fill={colors[index % colors.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend iconType="circle" />
+              </PieChart>
             </ResponsiveContainer>
           )}
         </div>

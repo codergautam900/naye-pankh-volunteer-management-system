@@ -5,8 +5,14 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import App from "./App.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
-import { ThemeProvider } from "./context/ThemeContext.jsx";
+import { ThemeProvider, useTheme } from "./context/ThemeContext.jsx";
 import "./styles/index.css";
+
+function ThemedToastContainer() {
+  const { theme } = useTheme();
+
+  return <ToastContainer position="top-right" autoClose={2500} theme={theme === "dark" ? "dark" : "light"} />;
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -14,10 +20,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ThemeProvider>
         <AuthProvider>
           <App />
-          <ToastContainer position="top-right" autoClose={2500} />
+          <ThemedToastContainer />
         </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
-

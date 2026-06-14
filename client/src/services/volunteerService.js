@@ -12,6 +12,11 @@ export const getVolunteers = async (params) => {
   return data;
 };
 
+export const getVolunteerActivity = async (id) => {
+  const { data } = await api.get(`/volunteers/${id}/activity`);
+  return data;
+};
+
 export const updateVolunteer = async (id, payload) => {
   const { data } = await api.put(`/volunteers/${id}`, payload);
   return data;
@@ -21,4 +26,3 @@ export const deleteVolunteer = async (id) => {
   const { data } = await api.delete(`/volunteers/${id}`);
   return data;
 };
-

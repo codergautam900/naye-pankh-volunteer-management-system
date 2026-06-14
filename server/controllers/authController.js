@@ -1,3 +1,4 @@
+import ActivityLog from "../models/ActivityLog.js";
 import Admin from "../models/Admin.js";
 import generateToken from "../utils/generateToken.js";
 
@@ -11,16 +12,21 @@ export const loginAdmin = async (req, res, next) => {
       throw new Error("Invalid email or password");
     }
 
+    await ActivityLog.create({
+      action: "Admin Login",
+      metadata: { email: admin.email }
+    });
+
     res.json({
       token: generateToken(admin._id),
       admin: {
         id: admin._id,
         name: admin.name,
-        email: admin.email
+        email: admin.email,
+        role: admin.role
       }
     });
   } catch (error) {
     next(error);
   }
 };
-

@@ -24,9 +24,9 @@ if (existingAdmin) {
 await Admin.create({
   name: "NayePankh Admin",
   email,
-  password
+  password,
+  role: "admin"
 });
 
 console.log("Admin created successfully");
 process.exit(0);
-

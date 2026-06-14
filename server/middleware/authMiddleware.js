@@ -26,3 +26,11 @@ export const protect = async (req, res, next) => {
   }
 };
 
+export const authorizeRoles = (...roles) => (req, res, next) => {
+  if (!req.admin || !roles.includes(req.admin.role)) {
+    res.status(403);
+    return next(new Error("Forbidden: insufficient admin permissions"));
+  }
+
+  return next();
+};
