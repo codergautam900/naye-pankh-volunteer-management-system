@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { BadgeCheck, CalendarDays, Eye, Mail, MapPin, MoreVertical, Pencil, Phone, Trash2 } from "lucide-react";
+import { BadgeCheck, CalendarDays, Eye, Mail, MapPin, Pencil, Phone, Trash2 } from "lucide-react";
 import VolunteerAvatar from "./VolunteerAvatar.jsx";
 
 export default function VolunteerTable({ volunteers = [], onView, onEdit, onDelete, deletingId }) {
-  const [openMenuId, setOpenMenuId] = useState("");
-
   if (volunteers.length === 0) {
     return (
       <div className="page-card grid min-h-52 place-items-center p-8 text-center">
@@ -23,7 +20,7 @@ export default function VolunteerTable({ volunteers = [], onView, onEdit, onDele
     <>
       <div className="page-card hidden lg:block">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[980px] text-left text-sm">
+          <table className="w-full min-w-[880px] text-left text-sm">
             <thead className="bg-slate-100 text-xs uppercase text-slate-600 dark:bg-slate-800 dark:text-slate-300">
             <tr>
               <th className="px-4 py-3">Name</th>
@@ -33,7 +30,6 @@ export default function VolunteerTable({ volunteers = [], onView, onEdit, onDele
               <th className="px-4 py-3">Skills</th>
               <th className="px-4 py-3">Department</th>
               <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3 text-right">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +41,13 @@ export default function VolunteerTable({ volunteers = [], onView, onEdit, onDele
                     <div>
                       <p className="font-semibold">{volunteer.fullName}</p>
                       <p className="text-xs text-slate-500 dark:text-slate-400">{volunteer.availability}</p>
+                      <InlineActions
+                        volunteer={volunteer}
+                        deletingId={deletingId}
+                        onView={onView}
+                        onEdit={onEdit}
+                        onDelete={onDelete}
+                      />
                     </div>
                   </div>
                 </td>
@@ -69,48 +72,6 @@ export default function VolunteerTable({ volunteers = [], onView, onEdit, onDele
                   >
                     {volunteer.isActive ? "Active" : "Inactive"}
                   </span>
-                </td>
-                <td className="px-4 py-3">
-                  <div className="relative flex justify-end">
-                    <button
-                      type="button"
-                      className="btn-secondary min-h-9 px-3 py-1.5"
-                      onClick={() => setOpenMenuId((current) => (current === volunteer._id ? "" : volunteer._id))}
-                      aria-label="Open volunteer actions"
-                    >
-                      <MoreVertical size={15} />
-                    </button>
-                    {openMenuId === volunteer._id ? (
-                      <div className="absolute right-0 top-10 z-20 w-44 rounded-lg border border-slate-200 bg-white p-1.5 shadow-xl shadow-slate-900/10 dark:border-slate-700 dark:bg-slate-950">
-                        <MenuButton
-                          icon={Eye}
-                          label="View profile"
-                          onClick={() => {
-                            setOpenMenuId("");
-                            onView(volunteer);
-                          }}
-                        />
-                        <MenuButton
-                          icon={Pencil}
-                          label="Edit details"
-                          onClick={() => {
-                            setOpenMenuId("");
-                            onEdit(volunteer);
-                          }}
-                        />
-                        <MenuButton
-                          icon={Trash2}
-                          label="Delete"
-                          danger
-                          disabled={deletingId === volunteer._id}
-                          onClick={() => {
-                            setOpenMenuId("");
-                            onDelete(volunteer);
-                          }}
-                        />
-                      </div>
-                    ) : null}
-                  </div>
                 </td>
               </tr>
             ))}
@@ -201,18 +162,45 @@ export default function VolunteerTable({ volunteers = [], onView, onEdit, onDele
   );
 }
 
-function MenuButton({ icon: Icon, label, danger = false, disabled = false, onClick }) {
+function InlineActions({ volunteer, deletingId, onView, onEdit, onDelete }) {
+  return (
+    <div className="mt-2 flex items-center gap-1.5">
+      <ActionIconButton
+        icon={Eye}
+        label={`View ${volunteer.fullName || "volunteer"} profile`}
+        onClick={() => onView(volunteer)}
+      />
+      <ActionIconButton
+        icon={Pencil}
+        label={`Edit ${volunteer.fullName || "volunteer"}`}
+        onClick={() => onEdit(volunteer)}
+      />
+      <ActionIconButton
+        icon={Trash2}
+        label={`Delete ${volunteer.fullName || "volunteer"}`}
+        danger
+        disabled={deletingId === volunteer._id}
+        onClick={() => onDelete(volunteer)}
+      />
+    </div>
+  );
+}
+
+function ActionIconButton({ icon: Icon, label, danger = false, disabled = false, onClick }) {
   return (
     <button
       type="button"
-      className={`flex w-full items-center gap-2 rounded-md px-3 py-2 text-left text-sm font-semibold transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50 dark:hover:bg-slate-800 ${
-        danger ? "text-red-600 dark:text-red-300" : "text-slate-700 dark:text-slate-200"
+      className={`grid h-8 w-8 place-items-center rounded-lg border text-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-50 ${
+        danger
+          ? "border-red-200 bg-red-50 text-red-600 hover:bg-red-100 focus:ring-red-500/30 dark:border-red-900 dark:bg-red-950/40 dark:text-red-300 dark:hover:bg-red-950"
+          : "border-slate-200 bg-white text-slate-600 hover:bg-slate-100 focus:ring-slate-300/70 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-800"
       }`}
       disabled={disabled}
       onClick={onClick}
+      aria-label={label}
+      title={label}
     >
-      <Icon size={15} />
-      {label}
+      <Icon size={14} />
     </button>
   );
 }
