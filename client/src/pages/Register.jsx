@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, BadgeCheck, CheckCircle2, ClipboardList, Clock3, HeartHandshake, ImagePlus, RotateCcw, Send, ShieldCheck, Sparkles, UserRound } from "lucide-react";
 import { toast } from "react-toastify";
 import RecommendationBox from "../components/RecommendationBox.jsx";
+import VolunteerAvatar from "../components/VolunteerAvatar.jsx";
 import { registerVolunteer } from "../services/volunteerService.js";
 import { availabilityOptions, recommendDepartment, skillOptions } from "../utils/constants.js";
 
@@ -122,13 +123,17 @@ export default function Register() {
     return (
       <main className="section-shell py-8">
         <section className="page-card fine-grid soft-highlight mx-auto grid max-w-3xl place-items-center p-6 text-center dark:bg-slate-950/40 sm:p-10">
-          <div className="grid h-20 w-20 place-items-center overflow-hidden rounded-lg bg-teal-50 text-brand-teal dark:bg-teal-950 dark:text-teal-200">
-            {submittedVolunteer.profileImage?.url ? (
-              <img src={submittedVolunteer.profileImage.url} alt={submittedVolunteer.fullName} className="h-full w-full object-cover" />
-            ) : (
+          {submittedVolunteer.profileImage?.url ? (
+            <VolunteerAvatar
+              name={submittedVolunteer.fullName}
+              imageUrl={submittedVolunteer.profileImage.url}
+              className="grid h-20 w-20 place-items-center overflow-hidden rounded-lg bg-teal-50 text-2xl font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200"
+            />
+          ) : (
+            <div className="grid h-20 w-20 place-items-center overflow-hidden rounded-lg bg-teal-50 text-brand-teal dark:bg-teal-950 dark:text-teal-200">
               <CheckCircle2 size={38} />
-            )}
-          </div>
+            </div>
+          )}
           <p className="eyebrow mt-6">Registration Complete</p>
           <h1 className="mt-2 text-2xl font-bold text-brand-navy dark:text-white sm:text-3xl">Thank you, {submittedVolunteer.fullName}</h1>
           <p className="mt-3 max-w-xl text-sm text-slate-500 dark:text-slate-400">

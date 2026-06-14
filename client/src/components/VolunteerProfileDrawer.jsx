@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AlertCircle, CalendarDays, CheckCircle2, Clock3, Mail, MapPin, Pencil, Phone, Trash2, Users, X } from "lucide-react";
+import VolunteerAvatar from "./VolunteerAvatar.jsx";
 import { getVolunteerActivity } from "../services/volunteerService.js";
 
 const formatDate = (date) => {
@@ -46,13 +47,11 @@ export default function VolunteerProfileDrawer({ volunteer, deletingId, onClose,
       <aside className="ml-auto flex h-full w-full max-w-xl flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl dark:border-slate-800 dark:bg-[#0f172a]">
         <div className="flex items-start justify-between gap-4 border-b border-slate-200 p-5 dark:border-slate-800">
           <div className="flex min-w-0 items-center gap-4">
-            <div className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-lg bg-teal-50 text-2xl font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200">
-              {volunteer.profileImage?.url ? (
-                <img src={volunteer.profileImage.url} alt={volunteer.fullName} className="h-full w-full object-cover" />
-              ) : (
-                volunteer.fullName?.charAt(0)?.toUpperCase() || "V"
-              )}
-            </div>
+            <VolunteerAvatar
+              name={volunteer.fullName}
+              imageUrl={volunteer.profileImage?.url}
+              className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-lg bg-teal-50 text-2xl font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200"
+            />
             <div className="min-w-0">
               <p className="eyebrow">Volunteer Profile</p>
               <h2 className="mt-1 truncate text-2xl font-bold text-brand-navy dark:text-white">{volunteer.fullName}</h2>

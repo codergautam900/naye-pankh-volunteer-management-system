@@ -2,6 +2,11 @@ import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 
 export const securityHeaders = helmet({
+  contentSecurityPolicy: {
+    directives: {
+      "img-src": ["'self'", "data:", "blob:", "https://res.cloudinary.com"]
+    }
+  },
   crossOriginResourcePolicy: { policy: "cross-origin" },
   referrerPolicy: { policy: "same-origin" }
 });

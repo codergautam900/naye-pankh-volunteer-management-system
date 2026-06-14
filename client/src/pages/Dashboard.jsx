@@ -4,6 +4,7 @@ import ActivityLogs from "../components/ActivityLogs.jsx";
 import DashboardCharts from "../components/DashboardCharts.jsx";
 import RecommendationBox from "../components/RecommendationBox.jsx";
 import StatCard from "../components/StatCard.jsx";
+import VolunteerAvatar from "../components/VolunteerAvatar.jsx";
 import { getActivityLogs, getDashboardStats } from "../services/dashboardService.js";
 
 const fallbackStats = {
@@ -269,13 +270,7 @@ function RecentVolunteers({ volunteers = [] }) {
         ) : (
           volunteers.map((volunteer) => (
             <div key={volunteer._id} className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/50">
-              <div className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-lg bg-teal-50 text-sm font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200">
-                {volunteer.profileImage?.url ? (
-                  <img src={volunteer.profileImage.url} alt={volunteer.fullName} className="h-full w-full object-cover" />
-                ) : (
-                  volunteer.fullName?.charAt(0)?.toUpperCase() || "V"
-                )}
-              </div>
+              <VolunteerAvatar name={volunteer.fullName} imageUrl={volunteer.profileImage?.url} />
               <div className="min-w-0 flex-1">
                 <p className="truncate font-semibold">{volunteer.fullName}</p>
                 <p className="truncate text-xs text-slate-500 dark:text-slate-400">{volunteer.city} - {volunteer.recommendedDepartment}</p>

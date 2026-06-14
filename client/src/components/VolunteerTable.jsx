@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BadgeCheck, CalendarDays, Eye, Mail, MapPin, MoreVertical, Pencil, Phone, Trash2 } from "lucide-react";
+import VolunteerAvatar from "./VolunteerAvatar.jsx";
 
 export default function VolunteerTable({ volunteers = [], onView, onEdit, onDelete, deletingId }) {
   const [openMenuId, setOpenMenuId] = useState("");
@@ -40,13 +41,7 @@ export default function VolunteerTable({ volunteers = [], onView, onEdit, onDele
               <tr key={volunteer._id} className="premium-table-row border-t border-slate-200 dark:border-slate-800">
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className="grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-lg bg-teal-50 text-sm font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200">
-                      {volunteer.profileImage?.url ? (
-                        <img src={volunteer.profileImage.url} alt={volunteer.fullName} className="h-full w-full object-cover" />
-                      ) : (
-                        volunteer.fullName?.charAt(0)?.toUpperCase() || "V"
-                      )}
-                    </div>
+                    <VolunteerAvatar name={volunteer.fullName} imageUrl={volunteer.profileImage?.url} />
                     <div>
                       <p className="font-semibold">{volunteer.fullName}</p>
                       <p className="text-xs text-slate-500 dark:text-slate-400">{volunteer.availability}</p>
@@ -128,13 +123,11 @@ export default function VolunteerTable({ volunteers = [], onView, onEdit, onDele
         {volunteers.map((volunteer) => (
           <article key={volunteer._id} className="page-card p-4">
             <div className="flex items-start gap-3">
-              <div className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg bg-teal-50 text-sm font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200">
-                {volunteer.profileImage?.url ? (
-                  <img src={volunteer.profileImage.url} alt={volunteer.fullName} className="h-full w-full object-cover" />
-                ) : (
-                  volunteer.fullName?.charAt(0)?.toUpperCase() || "V"
-                )}
-              </div>
+              <VolunteerAvatar
+                name={volunteer.fullName}
+                imageUrl={volunteer.profileImage?.url}
+                className="grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg bg-teal-50 text-sm font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200"
+              />
               <div className="min-w-0 flex-1">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0">
