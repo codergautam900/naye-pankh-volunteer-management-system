@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, BadgeCheck, CheckCircle2, ClipboardList, ImagePlus, RotateCcw, Send, Sparkles, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, BadgeCheck, CheckCircle2, ClipboardList, Clock3, HeartHandshake, ImagePlus, RotateCcw, Send, ShieldCheck, Sparkles, UserRound } from "lucide-react";
 import { toast } from "react-toastify";
 import RecommendationBox from "../components/RecommendationBox.jsx";
 import { registerVolunteer } from "../services/volunteerService.js";
@@ -121,7 +121,7 @@ export default function Register() {
   if (submittedVolunteer) {
     return (
       <main className="section-shell py-8">
-        <section className="page-card mx-auto grid max-w-3xl place-items-center p-6 text-center sm:p-10">
+        <section className="page-card fine-grid soft-highlight mx-auto grid max-w-3xl place-items-center p-6 text-center dark:bg-slate-950/40 sm:p-10">
           <div className="grid h-20 w-20 place-items-center overflow-hidden rounded-lg bg-teal-50 text-brand-teal dark:bg-teal-950 dark:text-teal-200">
             {submittedVolunteer.profileImage?.url ? (
               <img src={submittedVolunteer.profileImage.url} alt={submittedVolunteer.fullName} className="h-full w-full object-cover" />
@@ -151,7 +151,7 @@ export default function Register() {
   return (
     <main className="section-shell grid gap-6 py-6 sm:py-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
       <section className="page-card overflow-hidden">
-        <div className="border-b border-slate-200 bg-white/80 p-5 dark:border-slate-800 dark:bg-slate-900/40 sm:p-6">
+        <div className="fine-grid soft-highlight border-b border-slate-200 p-5 dark:border-slate-800 dark:bg-slate-950/40 sm:p-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow">Volunteer Form</p>
@@ -160,7 +160,10 @@ export default function Register() {
                 Add your details and get routed to the best-fit NayePankh team.
               </p>
             </div>
-            {form.skills.length > 0 ? <span className="badge">{selectedDepartment}</span> : null}
+            <div className="flex flex-wrap gap-2">
+              <span className="badge">Step {currentStep + 1} of {steps.length}</span>
+              {form.skills.length > 0 ? <span className="badge">{selectedDepartment}</span> : null}
+            </div>
           </div>
 
           <div className="mt-5">
@@ -236,9 +239,54 @@ export default function Register() {
 
       <aside className="grid h-fit gap-4 lg:sticky lg:top-24">
         <RecommendationBox />
+        <IntakeTimeline currentStep={currentStep} />
         <ApplicationSummary form={form} completion={completion} selectedDepartment={selectedDepartment} />
       </aside>
     </main>
+  );
+}
+
+function IntakeTimeline({ currentStep }) {
+  const timeline = [
+    { label: "Profile", icon: UserRound },
+    { label: "Skill Match", icon: Sparkles },
+    { label: "Review", icon: ShieldCheck },
+    { label: "Team Outreach", icon: HeartHandshake }
+  ];
+
+  return (
+    <div className="page-card p-5">
+      <div className="flex items-start gap-3">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-teal-50 text-brand-teal dark:bg-teal-950 dark:text-teal-200">
+          <Clock3 size={20} />
+        </span>
+        <div>
+          <h2 className="text-lg font-semibold">Intake Timeline</h2>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Current stage and next handoff.</p>
+        </div>
+      </div>
+      <div className="mt-5 grid gap-3">
+        {timeline.map((item, index) => {
+          const Icon = item.icon;
+          const active = index <= currentStep;
+
+          return (
+            <div key={item.label} className="flex items-center gap-3">
+              <span
+                className={`grid h-9 w-9 shrink-0 place-items-center rounded-lg border ${
+                  active
+                    ? "border-brand-teal bg-teal-50 text-brand-teal dark:bg-teal-950 dark:text-teal-100"
+                    : "border-slate-200 bg-slate-50 text-slate-400 dark:border-slate-800 dark:bg-slate-950"
+                }`}
+              >
+                <Icon size={16} />
+              </span>
+              <span className={`text-sm font-semibold ${active ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-slate-400"}`}>{item.label}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
