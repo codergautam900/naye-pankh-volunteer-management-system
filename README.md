@@ -235,22 +235,24 @@ npm run dev          # Start frontend on http://localhost:5173
 ## 🎨 Screenshots
 
 ### Desktop Views
-| Feature | Screenshot |
-|---------|-----------|
-| Home Page | ![Home Desktop](./docs/screenshots/home-desktop.png) |
-| Registration | ![Register Desktop](./docs/screenshots/register-desktop.png) |
-| Admin Login | ![Login Desktop](./docs/screenshots/login-desktop.png) |
-| Admin Dashboard | ![Dashboard Desktop](./docs/screenshots/dashboard-desktop.png) |
-| Volunteers Table | ![Volunteers Desktop](./docs/screenshots/volunteers-desktop.png) |
+
+<p>
+  <img src="./docs/screenshots/home-desktop.png" alt="Home desktop" width="320" />
+  <img src="./docs/screenshots/register-desktop.png" alt="Registration desktop" width="320" />
+  <img src="./docs/screenshots/login-desktop.png" alt="Admin login desktop" width="320" />
+  <img src="./docs/screenshots/dashboard-desktop.png" alt="Admin dashboard desktop" width="320" />
+  <img src="./docs/screenshots/volunteers-desktop.png" alt="Volunteers table desktop" width="320" />
+</p>
 
 ### Mobile Views
-| Feature | Screenshot |
-|---------|-----------|
-| Home Page | ![Home Mobile](./docs/screenshots/home-mobile.png) |
-| Registration | ![Register Mobile](./docs/screenshots/register-mobile.png) |
-| Admin Login | ![Login Mobile](./docs/screenshots/login-mobile.png) |
-| Admin Dashboard | ![Dashboard Mobile](./docs/screenshots/dashboard-mobile.png) |
-| Volunteers Table | ![Volunteers Mobile](./docs/screenshots/volunteers-mobile.png) |
+
+<p>
+  <img src="./docs/screenshots/home-mobile.png" alt="Home mobile" width="140" />
+  <img src="./docs/screenshots/register-mobile.png" alt="Registration mobile" width="140" />
+  <img src="./docs/screenshots/login-mobile.png" alt="Admin login mobile" width="140" />
+  <img src="./docs/screenshots/dashboard-mobile.png" alt="Admin dashboard mobile" width="140" />
+  <img src="./docs/screenshots/volunteers-mobile.png" alt="Volunteers table mobile" width="140" />
+</p>
 
 ## 📁 Folder Structure
 
