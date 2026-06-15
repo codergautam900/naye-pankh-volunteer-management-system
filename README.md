@@ -7,10 +7,21 @@ A full-stack MERN volunteer registration and admin operations dashboard for Naye
 
 ## 🚀 Quick Links
 
-- **Live Demo**: [Coming Soon]
-- **Admin Panel**: [Coming Soon]
+- **Live Demo**: [https://naye-pankh-volunteer-management-system.onrender.com/](https://naye-pankh-volunteer-management-system.onrender.com/)
+- **Admin Panel**: [https://naye-pankh-volunteer-management-system.onrender.com/login](https://naye-pankh-volunteer-management-system.onrender.com/login)
 - **Documentation**: See sections below
 - **License**: MIT
+
+## Demo Admin Access
+
+Use these credentials to explore the admin dashboard:
+
+```txt
+Email: admin@nayepankh.org
+Password: NayePankh@2026
+```
+
+> Note: These credentials are for demo/evaluation access only. Rotate them before using the project in production.
 
 ## ✨ Key Features
 
