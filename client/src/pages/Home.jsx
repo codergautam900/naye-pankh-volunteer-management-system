@@ -80,7 +80,7 @@ export default function Home() {
                 Join as Volunteer
                 <ArrowRight size={16} />
               </Link>
-              <Link to="/login" className="btn-secondary text-brand-navy hover:text-brand-navy dark:text-brand-navy">
+              <Link to="/login" className="btn-secondary border-white/80 bg-white text-brand-navy hover:bg-slate-100 hover:text-brand-navy dark:border-white/80 dark:bg-white dark:text-brand-navy dark:hover:bg-slate-100">
                 Admin Login
               </Link>
             </div>
