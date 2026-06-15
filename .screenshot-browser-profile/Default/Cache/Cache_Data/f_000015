@@ -1,0 +1,566 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/VolunteerTable.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=b8dd7e16"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+import { BadgeCheck, CalendarDays, Eye, Mail, MapPin, Pencil, Phone, Trash2 } from "/node_modules/.vite/deps/lucide-react.js?v=b8dd7e16";
+import VolunteerAvatar from "/src/components/VolunteerAvatar.jsx";
+export default function VolunteerTable({ volunteers = [], onView, onEdit, onDelete, deletingId }) {
+  if (volunteers.length === 0) {
+    return /* @__PURE__ */ jsxDEV("div", { className: "page-card grid min-h-52 place-items-center p-8 text-center", children: /* @__PURE__ */ jsxDEV("div", { children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "mx-auto grid h-12 w-12 place-items-center rounded-lg bg-slate-100 text-slate-500 dark:bg-slate-900 dark:text-slate-300", children: /* @__PURE__ */ jsxDEV(BadgeCheck, { size: 22 }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 29,
+        columnNumber: 13
+      }, this) }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 28,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "mt-4 font-semibold", children: "No volunteers found" }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 31,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "mt-1 text-sm text-slate-500 dark:text-slate-400", children: "Try changing filters or adding a new registration." }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 32,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, true, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+      lineNumber: 27,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+      lineNumber: 26,
+      columnNumber: 7
+    }, this);
+  }
+  return /* @__PURE__ */ jsxDEV(Fragment, { children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "page-card hidden lg:block", children: /* @__PURE__ */ jsxDEV("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxDEV("table", { className: "w-full min-w-[880px] text-left text-sm", children: [
+      /* @__PURE__ */ jsxDEV("thead", { className: "bg-slate-100 text-xs uppercase text-slate-600 dark:bg-slate-800 dark:text-slate-300", children: /* @__PURE__ */ jsxDEV("tr", { children: [
+        /* @__PURE__ */ jsxDEV("th", { className: "px-4 py-3", children: "Name" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 45,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("th", { className: "px-4 py-3", children: "Email" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 46,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("th", { className: "px-4 py-3", children: "Phone" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 47,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("th", { className: "px-4 py-3", children: "City" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 48,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("th", { className: "px-4 py-3", children: "Skills" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 49,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("th", { className: "px-4 py-3", children: "Department" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 50,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV("th", { className: "px-4 py-3", children: "Status" }, void 0, false, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 51,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 44,
+        columnNumber: 13
+      }, this) }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 43,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ jsxDEV("tbody", { children: volunteers.map(
+        (volunteer) => /* @__PURE__ */ jsxDEV("tr", { className: "premium-table-row border-t border-slate-200 dark:border-slate-800", children: [
+          /* @__PURE__ */ jsxDEV("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-3", children: [
+            /* @__PURE__ */ jsxDEV(VolunteerAvatar, { name: volunteer.fullName, imageUrl: volunteer.profileImage?.url }, void 0, false, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 59,
+              columnNumber: 21
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { children: [
+              /* @__PURE__ */ jsxDEV("p", { className: "font-semibold", children: volunteer.fullName }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 61,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ jsxDEV("p", { className: "text-xs text-slate-500 dark:text-slate-400", children: volunteer.availability }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 62,
+                columnNumber: 23
+              }, this),
+              /* @__PURE__ */ jsxDEV(
+                InlineActions,
+                {
+                  volunteer,
+                  deletingId,
+                  onView,
+                  onEdit,
+                  onDelete
+                },
+                void 0,
+                false,
+                {
+                  fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                  lineNumber: 63,
+                  columnNumber: 23
+                },
+                this
+              )
+            ] }, void 0, true, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 60,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, true, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 58,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 57,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("td", { className: "max-w-[210px] px-4 py-3", children: /* @__PURE__ */ jsxDEV("span", { className: "block truncate", children: volunteer.email }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 74,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 73,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("td", { className: "px-4 py-3", children: volunteer.phone }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 76,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("td", { className: "px-4 py-3", children: volunteer.city }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 77,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxDEV("div", { className: "flex flex-wrap gap-1.5", children: volunteer.skills?.length ? volunteer.skills.map((skill) => /* @__PURE__ */ jsxDEV("span", { className: "badge", children: skill }, skill, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 80,
+            columnNumber: 81
+          }, this)) : "No skills" }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 79,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 78,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("td", { className: "px-4 py-3", children: volunteer.recommendedDepartment || "Not assigned" }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 83,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxDEV(
+            "span",
+            {
+              className: `inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${volunteer.isActive ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-200" : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"}`,
+              children: volunteer.isActive ? "Active" : "Inactive"
+            },
+            void 0,
+            false,
+            {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 85,
+              columnNumber: 19
+            },
+            this
+          ) }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 84,
+            columnNumber: 17
+          }, this)
+        ] }, volunteer._id, true, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 56,
+          columnNumber: 15
+        }, this)
+      ) }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 54,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, true, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+      lineNumber: 42,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+      lineNumber: 41,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+      lineNumber: 40,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "grid gap-3 lg:hidden", children: volunteers.map(
+      (volunteer) => /* @__PURE__ */ jsxDEV("article", { className: "page-card p-4", children: /* @__PURE__ */ jsxDEV("div", { className: "flex items-start gap-3", children: [
+        /* @__PURE__ */ jsxDEV(
+          VolunteerAvatar,
+          {
+            name: volunteer.fullName,
+            imageUrl: volunteer.profileImage?.url,
+            className: "grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-lg bg-teal-50 text-sm font-bold text-brand-teal dark:bg-teal-950 dark:text-teal-200"
+          },
+          void 0,
+          false,
+          {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 106,
+            columnNumber: 15
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV("div", { className: "min-w-0 flex-1", children: [
+          /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "min-w-0", children: [
+              /* @__PURE__ */ jsxDEV("h3", { className: "truncate font-semibold text-brand-navy dark:text-white", children: volunteer.fullName }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 114,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ jsxDEV("p", { className: "mt-1 flex items-center gap-1.5 truncate text-xs text-slate-500 dark:text-slate-400", children: [
+                /* @__PURE__ */ jsxDEV(CalendarDays, { size: 14, className: "shrink-0" }, void 0, false, {
+                  fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                  lineNumber: 116,
+                  columnNumber: 23
+                }, this),
+                volunteer.availability
+              ] }, void 0, true, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 115,
+                columnNumber: 21
+              }, this)
+            ] }, void 0, true, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 113,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ jsxDEV(
+              "span",
+              {
+                className: `w-fit rounded-full px-2.5 py-1 text-xs font-semibold ${volunteer.isActive ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-200" : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"}`,
+                children: volunteer.isActive ? "Active" : "Inactive"
+              },
+              void 0,
+              false,
+              {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 120,
+                columnNumber: 19
+              },
+              this
+            )
+          ] }, void 0, true, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 112,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "mt-4 grid gap-2 text-sm text-slate-600 dark:text-slate-300", children: [
+            /* @__PURE__ */ jsxDEV("p", { className: "flex min-w-0 items-center gap-2", children: [
+              /* @__PURE__ */ jsxDEV(Mail, { size: 15, className: "shrink-0 text-slate-400" }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 133,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { className: "truncate", children: volunteer.email }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 134,
+                columnNumber: 21
+              }, this)
+            ] }, void 0, true, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 132,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ jsxDEV("p", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxDEV(Phone, { size: 15, className: "shrink-0 text-slate-400" }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 137,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { children: volunteer.phone }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 138,
+                columnNumber: 21
+              }, this)
+            ] }, void 0, true, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 136,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ jsxDEV("p", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxDEV(MapPin, { size: 15, className: "shrink-0 text-slate-400" }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 141,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { children: volunteer.city }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 142,
+                columnNumber: 21
+              }, this)
+            ] }, void 0, true, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 140,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, true, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 131,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "mt-4 flex flex-wrap gap-1.5", children: volunteer.skills?.length ? volunteer.skills.map((skill) => /* @__PURE__ */ jsxDEV("span", { className: "badge", children: skill }, skill, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 147,
+            columnNumber: 79
+          }, this)) : /* @__PURE__ */ jsxDEV("span", { className: "badge", children: "No skills" }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 147,
+            columnNumber: 133
+          }, this) }, void 0, false, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 146,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "mt-4 flex flex-col gap-2 border-t border-slate-200 pt-4 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between", children: [
+            /* @__PURE__ */ jsxDEV("p", { className: "text-sm", children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "text-slate-500 dark:text-slate-400", children: "Department: " }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 152,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { className: "font-semibold", children: volunteer.recommendedDepartment || "Not assigned" }, void 0, false, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 153,
+                columnNumber: 21
+              }, this)
+            ] }, void 0, true, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 151,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { className: "flex gap-2", children: [
+              /* @__PURE__ */ jsxDEV("button", { type: "button", className: "btn-secondary min-h-10 flex-1 px-3 py-1.5 sm:flex-none", onClick: () => onView(volunteer), children: [
+                /* @__PURE__ */ jsxDEV(Eye, { size: 15 }, void 0, false, {
+                  fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                  lineNumber: 157,
+                  columnNumber: 23
+                }, this),
+                "View"
+              ] }, void 0, true, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 156,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ jsxDEV("button", { type: "button", className: "btn-secondary min-h-10 flex-1 px-3 py-1.5 sm:flex-none", onClick: () => onEdit(volunteer), children: [
+                /* @__PURE__ */ jsxDEV(Pencil, { size: 15 }, void 0, false, {
+                  fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                  lineNumber: 161,
+                  columnNumber: 23
+                }, this),
+                "Edit"
+              ] }, void 0, true, {
+                fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                lineNumber: 160,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ jsxDEV(
+                "button",
+                {
+                  type: "button",
+                  className: "btn-secondary min-h-10 flex-1 px-3 py-1.5 text-red-600 sm:flex-none",
+                  onClick: () => onDelete(volunteer),
+                  disabled: deletingId === volunteer._id,
+                  children: [
+                    /* @__PURE__ */ jsxDEV(Trash2, { size: 15 }, void 0, false, {
+                      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                      lineNumber: 170,
+                      columnNumber: 23
+                    }, this),
+                    "Delete"
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+                  lineNumber: 164,
+                  columnNumber: 21
+                },
+                this
+              )
+            ] }, void 0, true, {
+              fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+              lineNumber: 155,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, true, {
+            fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+            lineNumber: 150,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+          lineNumber: 111,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 105,
+        columnNumber: 13
+      }, this) }, volunteer._id, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 104,
+        columnNumber: 9
+      }, this)
+    ) }, void 0, false, {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+      lineNumber: 102,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+    lineNumber: 39,
+    columnNumber: 5
+  }, this);
+}
+_c = VolunteerTable;
+function InlineActions({ volunteer, deletingId, onView, onEdit, onDelete }) {
+  return /* @__PURE__ */ jsxDEV("div", { className: "mt-2 flex items-center gap-1.5", children: [
+    /* @__PURE__ */ jsxDEV(
+      ActionIconButton,
+      {
+        icon: Eye,
+        label: `View ${volunteer.fullName || "volunteer"} profile`,
+        onClick: () => onView(volunteer)
+      },
+      void 0,
+      false,
+      {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 187,
+        columnNumber: 7
+      },
+      this
+    ),
+    /* @__PURE__ */ jsxDEV(
+      ActionIconButton,
+      {
+        icon: Pencil,
+        label: `Edit ${volunteer.fullName || "volunteer"}`,
+        onClick: () => onEdit(volunteer)
+      },
+      void 0,
+      false,
+      {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 192,
+        columnNumber: 7
+      },
+      this
+    ),
+    /* @__PURE__ */ jsxDEV(
+      ActionIconButton,
+      {
+        icon: Trash2,
+        label: `Delete ${volunteer.fullName || "volunteer"}`,
+        danger: true,
+        disabled: deletingId === volunteer._id,
+        onClick: () => onDelete(volunteer)
+      },
+      void 0,
+      false,
+      {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 197,
+        columnNumber: 7
+      },
+      this
+    )
+  ] }, void 0, true, {
+    fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+    lineNumber: 186,
+    columnNumber: 5
+  }, this);
+}
+_c2 = InlineActions;
+function ActionIconButton({ icon: Icon, label, danger = false, disabled = false, onClick }) {
+  return /* @__PURE__ */ jsxDEV(
+    "button",
+    {
+      type: "button",
+      className: `grid h-8 w-8 place-items-center rounded-lg border text-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-50 ${danger ? "border-red-200 bg-red-50 text-red-600 hover:bg-red-100 focus:ring-red-500/30 dark:border-red-900 dark:bg-red-950/40 dark:text-red-300 dark:hover:bg-red-950" : "border-slate-200 bg-white text-slate-600 hover:bg-slate-100 focus:ring-slate-300/70 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-800"}`,
+      disabled,
+      onClick,
+      "aria-label": label,
+      title: label,
+      children: /* @__PURE__ */ jsxDEV(Icon, { size: 14 }, void 0, false, {
+        fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+        lineNumber: 222,
+        columnNumber: 7
+      }, this)
+    },
+    void 0,
+    false,
+    {
+      fileName: "D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx",
+      lineNumber: 210,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_c3 = ActionIconButton;
+var _c, _c2, _c3;
+$RefreshReg$(_c, "VolunteerTable");
+$RefreshReg$(_c2, "InlineActions");
+$RefreshReg$(_c3, "ActionIconButton");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("D:/Desktop/OneDrive/Desktop/Nayapankh internship/client/src/components/VolunteerTable.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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LFNBQVM7QUFBQTtBQUFBLE1BTG5DO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxJQUtxQztBQUFBLE9BaEJ2QztBQUFBO0FBQUE7QUFBQTtBQUFBLFNBa0JBO0FBRUo7QUFBQ2UsTUF0QlFEO0FBd0JULFNBQVNFLGlCQUFpQixFQUFFQyxNQUFNQyxNQUFNQyxPQUFPQyxTQUFTLE9BQU9DLFdBQVcsT0FBT0MsUUFBUSxHQUFHO0FBQzFGLFNBQ0U7QUFBQSxJQUFDO0FBQUE7QUFBQSxNQUNDLE1BQUs7QUFBQSxNQUNMLFdBQVcsc01BQ1RGLFNBQ0ksZ0tBQ0EseUtBQXlLO0FBQUEsTUFFL0s7QUFBQSxNQUNBO0FBQUEsTUFDQSxjQUFZRDtBQUFBQSxNQUNaLE9BQU9BO0FBQUFBLE1BRVAsaUNBQUMsUUFBSyxNQUFNLE1BQVo7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUFlO0FBQUE7QUFBQSxJQVpqQjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsRUFhQTtBQUVKO0FBQUNJLE1BakJRUDtBQUFnQixJQUFBSCxJQUFBRSxLQUFBUTtBQUFBLGFBQUFWLElBQUE7QUFBQSxhQUFBRSxLQUFBO0FBQUEsYUFBQVEsS0FBQSIsIm5hbWVzIjpbIkJhZGdlQ2hlY2siLCJDYWxlbmRhckRheXMiLCJFeWUiLCJNYWlsIiwiTWFwUGluIiwiUGVuY2lsIiwiUGhvbmUiLCJUcmFzaDIiLCJWb2x1bnRlZXJBdmF0YXIiLCJWb2x1bnRlZXJUYWJsZSIsInZvbHVudGVlcnMiLCJvblZpZXciLCJvbkVkaXQiLCJvbkRlbGV0ZSIsImRlbGV0aW5nSWQiLCJsZW5ndGgiLCJtYXAiLCJ2b2x1bnRlZXIiLCJmdWxsTmFtZSIsInByb2ZpbGVJbWFnZSIsInVybCIsImF2YWlsYWJpbGl0eSIsImVtYWlsIiwicGhvbmUiLCJjaXR5Iiwic2tpbGxzIiwic2tpbGwiLCJyZWNvbW1lbmRlZERlcGFydG1lbnQiLCJpc0FjdGl2ZSIsIl9pZCIsIl9jIiwiSW5saW5lQWN0aW9ucyIsIl9jMiIsIkFjdGlvbkljb25CdXR0b24iLCJpY29uIiwiSWNvbiIsImxhYmVsIiwiZGFuZ2VyIiwiZGlzYWJsZWQiLCJvbkNsaWNrIiwiX2MzIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIlZvbHVudGVlclRhYmxlLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBCYWRnZUNoZWNrLCBDYWxlbmRhckRheXMsIEV5ZSwgTWFpbCwgTWFwUGluLCBQZW5jaWwsIFBob25lLCBUcmFzaDIgfSBmcm9tIFwibHVjaWRlLXJlYWN0XCI7XG5pbXBvcnQgVm9sdW50ZWVyQXZhdGFyIGZyb20gXCIuL1ZvbHVudGVlckF2YXRhci5qc3hcIjtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gVm9sdW50ZWVyVGFibGUoeyB2b2x1bnRlZXJzID0gW10sIG9uVmlldywgb25FZGl0LCBvbkRlbGV0ZSwgZGVsZXRpbmdJZCB9KSB7XG4gIGlmICh2b2x1bnRlZXJzLmxlbmd0aCA9PT0gMCkge1xuICAgIHJldHVybiAoXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInBhZ2UtY2FyZCBncmlkIG1pbi1oLTUyIHBsYWNlLWl0ZW1zLWNlbnRlciBwLTggdGV4dC1jZW50ZXJcIj5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm14LWF1dG8gZ3JpZCBoLTEyIHctMTIgcGxhY2UtaXRlbXMtY2VudGVyIHJvdW5kZWQtbGcgYmctc2xhdGUtMTAwIHRleHQtc2xhdGUtNTAwIGRhcms6Ymctc2xhdGUtOTAwIGRhcms6dGV4dC1zbGF0ZS0zMDBcIj5cbiAgICAgICAgICAgIDxCYWRnZUNoZWNrIHNpemU9ezIyfSAvPlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm10LTQgZm9udC1zZW1pYm9sZFwiPk5vIHZvbHVudGVlcnMgZm91bmQ8L3A+XG4gICAgICAgICAgPHAgY2xhc3NOYW1lPVwibXQtMSB0ZXh0LXNtIHRleHQtc2xhdGUtNTAwIGRhcms6dGV4dC1zbGF0ZS00MDBcIj5UcnkgY2hhbmdpbmcgZmlsdGVycyBvciBhZGRpbmcgYSBuZXcgcmVnaXN0cmF0aW9uLjwvcD5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICApO1xuICB9XG5cbiAgcmV0dXJuIChcbiAgICA8PlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJwYWdlLWNhcmQgaGlkZGVuIGxnOmJsb2NrXCI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwib3ZlcmZsb3cteC1hdXRvXCI+XG4gICAgICAgICAgPHRhYmxlIGNsYXNzTmFtZT1cInctZnVsbCBtaW4tdy1bODgwcHhdIHRleHQtbGVmdCB0ZXh0LXNtXCI+XG4gICAgICAgICAgICA8dGhlYWQgY2xhc3NOYW1lPVwiYmctc2xhdGUtMTAwIHRleHQteHMgdXBwZXJjYXNlIHRleHQtc2xhdGUtNjAwIGRhcms6Ymctc2xhdGUtODAwIGRhcms6dGV4dC1zbGF0ZS0zMDBcIj5cbiAgICAgICAgICAgIDx0cj5cbiAgICAgICAgICAgICAgPHRoIGNsYXNzTmFtZT1cInB4LTQgcHktM1wiPk5hbWU8L3RoPlxuICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPVwicHgtNCBweS0zXCI+RW1haWw8L3RoPlxuICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPVwicHgtNCBweS0zXCI+UGhvbmU8L3RoPlxuICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPVwicHgtNCBweS0zXCI+Q2l0eTwvdGg+XG4gICAgICAgICAgICAgIDx0aCBjbGFzc05hbWU9XCJweC00IHB5LTNcIj5Ta2lsbHM8L3RoPlxuICAgICAgICAgICAgICA8dGggY2xhc3NOYW1lPVwicHgtNCBweS0zXCI+RGVwYXJ0bWVudDwvdGg+XG4gICAgICAgICAgICAgIDx0aCBjbGFzc05hbWU9XCJweC00IHB5LTNcIj5TdGF0dXM8L3RoPlxuICAgICAgICAgICAgPC90cj5cbiAgICAgICAgICA8L3RoZWFkPlxuICAgICAgICAgIDx0Ym9keT5cbiAgICAgICAgICAgIHt2b2x1bnRlZXJzLm1hcCgodm9sdW50ZWVyKSA9PiAoXG4gICAgICAgICAgICAgIDx0ciBrZXk9e3ZvbHVudGVlci5faWR9IGNsYXNzTmFtZT1cInByZW1pdW0tdGFibGUtcm93IGJvcmRlci10IGJvcmRlci1zbGF0ZS0yMDAgZGFyazpib3JkZXItc2xhdGUtODAwXCI+XG4gICAgICAgICAgICAgICAgPHRkIGNsYXNzTmFtZT1cInB4LTQgcHktM1wiPlxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtM1wiPlxuICAgICAgICAgICAgICAgICAgICA8Vm9sdW50ZWVyQXZhdGFyIG5hbWU9e3ZvbHVudGVlci5mdWxsTmFtZX0gaW1hZ2VVcmw9e3ZvbHVudGVlci5wcm9maWxlSW1hZ2U/LnVybH0gLz5cbiAgICAgICAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJmb250LXNlbWlib2xkXCI+e3ZvbHVudGVlci5mdWxsTmFtZX08L3A+XG4gICAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC14cyB0ZXh0LXNsYXRlLTUwMCBkYXJrOnRleHQtc2xhdGUtNDAwXCI+e3ZvbHVudGVlci5hdmFpbGFiaWxpdHl9PC9wPlxuICAgICAgICAgICAgICAgICAgICAgIDxJbmxpbmVBY3Rpb25zXG4gICAgICAgICAgICAgICAgICAgICAgICB2b2x1bnRlZXI9e3ZvbHVudGVlcn1cbiAgICAgICAgICAgICAgICAgICAgICAgIGRlbGV0aW5nSWQ9e2RlbGV0aW5nSWR9XG4gICAgICAgICAgICAgICAgICAgICAgICBvblZpZXc9e29uVmlld31cbiAgICAgICAgICAgICAgICAgICAgICAgIG9uRWRpdD17b25FZGl0fVxuICAgICAgICAgICAgICAgICAgICAgICAgb25EZWxldGU9e29uRGVsZXRlfVxuICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC90ZD5cbiAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPVwibWF4LXctWzIxMHB4XSBweC00IHB5LTNcIj5cbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImJsb2NrIHRydW5jYXRlXCI+e3ZvbHVudGVlci5lbWFpbH08L3NwYW4+XG4gICAgICAgICAgICAgICAgPC90ZD5cbiAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPVwicHgtNCBweS0zXCI+e3ZvbHVudGVlci5waG9uZX08L3RkPlxuICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9XCJweC00IHB5LTNcIj57dm9sdW50ZWVyLmNpdHl9PC90ZD5cbiAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPVwicHgtNCBweS0zXCI+XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC13cmFwIGdhcC0xLjVcIj5cbiAgICAgICAgICAgICAgICAgICAge3ZvbHVudGVlci5za2lsbHM/Lmxlbmd0aCA/IHZvbHVudGVlci5za2lsbHMubWFwKChza2lsbCkgPT4gPHNwYW4ga2V5PXtza2lsbH0gY2xhc3NOYW1lPVwiYmFkZ2VcIj57c2tpbGx9PC9zcGFuPikgOiBcIk5vIHNraWxsc1wifVxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC90ZD5cbiAgICAgICAgICAgICAgICA8dGQgY2xhc3NOYW1lPVwicHgtNCBweS0zXCI+e3ZvbHVudGVlci5yZWNvbW1lbmRlZERlcGFydG1lbnQgfHwgXCJOb3QgYXNzaWduZWRcIn08L3RkPlxuICAgICAgICAgICAgICAgIDx0ZCBjbGFzc05hbWU9XCJweC00IHB5LTNcIj5cbiAgICAgICAgICAgICAgICAgIDxzcGFuXG4gICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17YGlubGluZS1mbGV4IHJvdW5kZWQtZnVsbCBweC0yLjUgcHktMSB0ZXh0LXhzIGZvbnQtc2VtaWJvbGQgJHtcbiAgICAgICAgICAgICAgICAgICAgICB2b2x1bnRlZXIuaXNBY3RpdmVcbiAgICAgICAgICAgICAgICAgICAgICAgID8gXCJiZy1lbWVyYWxkLTUwIHRleHQtZW1lcmFsZC03MDAgZGFyazpiZy1lbWVyYWxkLTk1MCBkYXJrOnRleHQtZW1lcmFsZC0yMDBcIlxuICAgICAgICAgICAgICAgICAgICAgICAgOiBcImJnLXNsYXRlLTEwMCB0ZXh0LXNsYXRlLTYwMCBkYXJrOmJnLXNsYXRlLTgwMCBkYXJrOnRleHQtc2xhdGUtMzAwXCJcbiAgICAgICAgICAgICAgICAgICAgfWB9XG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIHt2b2x1bnRlZXIuaXNBY3RpdmUgPyBcIkFjdGl2ZVwiIDogXCJJbmFjdGl2ZVwifVxuICAgICAgICAgICAgICAgICAgPC9zcGFuPlxuICAgICAgICAgICAgICAgIDwvdGQ+XG4gICAgICAgICAgICAgIDwvdHI+XG4gICAgICAgICAgICApKX1cbiAgICAgICAgICA8L3Rib2R5PlxuICAgICAgICA8L3RhYmxlPlxuICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cblxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJncmlkIGdhcC0zIGxnOmhpZGRlblwiPlxuICAgICAgICB7dm9sdW50ZWVycy5tYXAoKHZvbHVudGVlcikgPT4gKFxuICAgICAgICAgIDxhcnRpY2xlIGtleT17dm9sdW50ZWVyLl9pZH0gY2xhc3NOYW1lPVwicGFnZS1jYXJkIHAtNFwiPlxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLXN0YXJ0IGdhcC0zXCI+XG4gICAgICAgICAgICAgIDxWb2x1bnRlZXJBdmF0YXJcbiAgICAgICAgICAgICAgICBuYW1lPXt2b2x1bnRlZXIuZnVsbE5hbWV9XG4gICAgICAgICAgICAgICAgaW1hZ2VVcmw9e3ZvbHVudGVlci5wcm9maWxlSW1hZ2U/LnVybH1cbiAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJncmlkIGgtMTIgdy0xMiBzaHJpbmstMCBwbGFjZS1pdGVtcy1jZW50ZXIgb3ZlcmZsb3ctaGlkZGVuIHJvdW5kZWQtbGcgYmctdGVhbC01MCB0ZXh0LXNtIGZvbnQtYm9sZCB0ZXh0LWJyYW5kLXRlYWwgZGFyazpiZy10ZWFsLTk1MCBkYXJrOnRleHQtdGVhbC0yMDBcIlxuICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1pbi13LTAgZmxleC0xXCI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGdhcC0yIHNtOmZsZXgtcm93IHNtOml0ZW1zLXN0YXJ0IHNtOmp1c3RpZnktYmV0d2VlblwiPlxuICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtaW4tdy0wXCI+XG4gICAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJ0cnVuY2F0ZSBmb250LXNlbWlib2xkIHRleHQtYnJhbmQtbmF2eSBkYXJrOnRleHQtd2hpdGVcIj57dm9sdW50ZWVyLmZ1bGxOYW1lfTwvaDM+XG4gICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm10LTEgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEuNSB0cnVuY2F0ZSB0ZXh0LXhzIHRleHQtc2xhdGUtNTAwIGRhcms6dGV4dC1zbGF0ZS00MDBcIj5cbiAgICAgICAgICAgICAgICAgICAgICA8Q2FsZW5kYXJEYXlzIHNpemU9ezE0fSBjbGFzc05hbWU9XCJzaHJpbmstMFwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAge3ZvbHVudGVlci5hdmFpbGFiaWxpdHl9XG4gICAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPHNwYW5cbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtgdy1maXQgcm91bmRlZC1mdWxsIHB4LTIuNSBweS0xIHRleHQteHMgZm9udC1zZW1pYm9sZCAke1xuICAgICAgICAgICAgICAgICAgICAgIHZvbHVudGVlci5pc0FjdGl2ZVxuICAgICAgICAgICAgICAgICAgICAgICAgPyBcImJnLWVtZXJhbGQtNTAgdGV4dC1lbWVyYWxkLTcwMCBkYXJrOmJnLWVtZXJhbGQtOTUwIGRhcms6dGV4dC1lbWVyYWxkLTIwMFwiXG4gICAgICAgICAgICAgICAgICAgICAgICA6IFwiYmctc2xhdGUtMTAwIHRleHQtc2xhdGUtNjAwIGRhcms6Ymctc2xhdGUtODAwIGRhcms6dGV4dC1zbGF0ZS0zMDBcIlxuICAgICAgICAgICAgICAgICAgICB9YH1cbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAge3ZvbHVudGVlci5pc0FjdGl2ZSA/IFwiQWN0aXZlXCIgOiBcIkluYWN0aXZlXCJ9XG4gICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTQgZ3JpZCBnYXAtMiB0ZXh0LXNtIHRleHQtc2xhdGUtNjAwIGRhcms6dGV4dC1zbGF0ZS0zMDBcIj5cbiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cImZsZXggbWluLXctMCBpdGVtcy1jZW50ZXIgZ2FwLTJcIj5cbiAgICAgICAgICAgICAgICAgICAgPE1haWwgc2l6ZT17MTV9IGNsYXNzTmFtZT1cInNocmluay0wIHRleHQtc2xhdGUtNDAwXCIgLz5cbiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidHJ1bmNhdGVcIj57dm9sdW50ZWVyLmVtYWlsfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0yXCI+XG4gICAgICAgICAgICAgICAgICAgIDxQaG9uZSBzaXplPXsxNX0gY2xhc3NOYW1lPVwic2hyaW5rLTAgdGV4dC1zbGF0ZS00MDBcIiAvPlxuICAgICAgICAgICAgICAgICAgICA8c3Bhbj57dm9sdW50ZWVyLnBob25lfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0yXCI+XG4gICAgICAgICAgICAgICAgICAgIDxNYXBQaW4gc2l6ZT17MTV9IGNsYXNzTmFtZT1cInNocmluay0wIHRleHQtc2xhdGUtNDAwXCIgLz5cbiAgICAgICAgICAgICAgICAgICAgPHNwYW4+e3ZvbHVudGVlci5jaXR5fTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXQtNCBmbGV4IGZsZXgtd3JhcCBnYXAtMS41XCI+XG4gICAgICAgICAgICAgICAgICB7dm9sdW50ZWVyLnNraWxscz8ubGVuZ3RoID8gdm9sdW50ZWVyLnNraWxscy5tYXAoKHNraWxsKSA9PiA8c3BhbiBrZXk9e3NraWxsfSBjbGFzc05hbWU9XCJiYWRnZVwiPntza2lsbH08L3NwYW4+KSA6IDxzcGFuIGNsYXNzTmFtZT1cImJhZGdlXCI+Tm8gc2tpbGxzPC9zcGFuPn1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXQtNCBmbGV4IGZsZXgtY29sIGdhcC0yIGJvcmRlci10IGJvcmRlci1zbGF0ZS0yMDAgcHQtNCBkYXJrOmJvcmRlci1zbGF0ZS04MDAgc206ZmxleC1yb3cgc206aXRlbXMtY2VudGVyIHNtOmp1c3RpZnktYmV0d2VlblwiPlxuICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC1zbVwiPlxuICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LXNsYXRlLTUwMCBkYXJrOnRleHQtc2xhdGUtNDAwXCI+RGVwYXJ0bWVudDogPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJmb250LXNlbWlib2xkXCI+e3ZvbHVudGVlci5yZWNvbW1lbmRlZERlcGFydG1lbnQgfHwgXCJOb3QgYXNzaWduZWRcIn08L3NwYW4+XG4gICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZ2FwLTJcIj5cbiAgICAgICAgICAgICAgICAgICAgPGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgY2xhc3NOYW1lPVwiYnRuLXNlY29uZGFyeSBtaW4taC0xMCBmbGV4LTEgcHgtMyBweS0xLjUgc206ZmxleC1ub25lXCIgb25DbGljaz17KCkgPT4gb25WaWV3KHZvbHVudGVlcil9PlxuICAgICAgICAgICAgICAgICAgICAgIDxFeWUgc2l6ZT17MTV9IC8+XG4gICAgICAgICAgICAgICAgICAgICAgVmlld1xuICAgICAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICAgICAgPGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgY2xhc3NOYW1lPVwiYnRuLXNlY29uZGFyeSBtaW4taC0xMCBmbGV4LTEgcHgtMyBweS0xLjUgc206ZmxleC1ub25lXCIgb25DbGljaz17KCkgPT4gb25FZGl0KHZvbHVudGVlcil9PlxuICAgICAgICAgICAgICAgICAgICAgIDxQZW5jaWwgc2l6ZT17MTV9IC8+XG4gICAgICAgICAgICAgICAgICAgICAgRWRpdFxuICAgICAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICAgICAgPGJ1dHRvblxuICAgICAgICAgICAgICAgICAgICAgIHR5cGU9XCJidXR0b25cIlxuICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJ0bi1zZWNvbmRhcnkgbWluLWgtMTAgZmxleC0xIHB4LTMgcHktMS41IHRleHQtcmVkLTYwMCBzbTpmbGV4LW5vbmVcIlxuICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IG9uRGVsZXRlKHZvbHVudGVlcil9XG4gICAgICAgICAgICAgICAgICAgICAgZGlzYWJsZWQ9e2RlbGV0aW5nSWQgPT09IHZvbHVudGVlci5faWR9XG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICA8VHJhc2gyIHNpemU9ezE1fSAvPlxuICAgICAgICAgICAgICAgICAgICAgIERlbGV0ZVxuICAgICAgICAgICAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDwvYXJ0aWNsZT5cbiAgICAgICAgKSl9XG4gICAgICA8L2Rpdj5cbiAgICA8Lz5cbiAgKTtcbn1cblxuZnVuY3Rpb24gSW5saW5lQWN0aW9ucyh7IHZvbHVudGVlciwgZGVsZXRpbmdJZCwgb25WaWV3LCBvbkVkaXQsIG9uRGVsZXRlIH0pIHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm10LTIgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEuNVwiPlxuICAgICAgPEFjdGlvbkljb25CdXR0b25cbiAgICAgICAgaWNvbj17RXllfVxuICAgICAgICBsYWJlbD17YFZpZXcgJHt2b2x1bnRlZXIuZnVsbE5hbWUgfHwgXCJ2b2x1bnRlZXJcIn0gcHJvZmlsZWB9XG4gICAgICAgIG9uQ2xpY2s9eygpID0+IG9uVmlldyh2b2x1bnRlZXIpfVxuICAgICAgLz5cbiAgICAgIDxBY3Rpb25JY29uQnV0dG9uXG4gICAgICAgIGljb249e1BlbmNpbH1cbiAgICAgICAgbGFiZWw9e2BFZGl0ICR7dm9sdW50ZWVyLmZ1bGxOYW1lIHx8IFwidm9sdW50ZWVyXCJ9YH1cbiAgICAgICAgb25DbGljaz17KCkgPT4gb25FZGl0KHZvbHVudGVlcil9XG4gICAgICAvPlxuICAgICAgPEFjdGlvbkljb25CdXR0b25cbiAgICAgICAgaWNvbj17VHJhc2gyfVxuICAgICAgICBsYWJlbD17YERlbGV0ZSAke3ZvbHVudGVlci5mdWxsTmFtZSB8fCBcInZvbHVudGVlclwifWB9XG4gICAgICAgIGRhbmdlclxuICAgICAgICBkaXNhYmxlZD17ZGVsZXRpbmdJZCA9PT0gdm9sdW50ZWVyLl9pZH1cbiAgICAgICAgb25DbGljaz17KCkgPT4gb25EZWxldGUodm9sdW50ZWVyKX1cbiAgICAgIC8+XG4gICAgPC9kaXY+XG4gICk7XG59XG5cbmZ1bmN0aW9uIEFjdGlvbkljb25CdXR0b24oeyBpY29uOiBJY29uLCBsYWJlbCwgZGFuZ2VyID0gZmFsc2UsIGRpc2FibGVkID0gZmFsc2UsIG9uQ2xpY2sgfSkge1xuICByZXR1cm4gKFxuICAgIDxidXR0b25cbiAgICAgIHR5cGU9XCJidXR0b25cIlxuICAgICAgY2xhc3NOYW1lPXtgZ3JpZCBoLTggdy04IHBsYWNlLWl0ZW1zLWNlbnRlciByb3VuZGVkLWxnIGJvcmRlciB0ZXh0LXNtIHRyYW5zaXRpb24gaG92ZXI6LXRyYW5zbGF0ZS15LTAuNSBmb2N1czpvdXRsaW5lLW5vbmUgZm9jdXM6cmluZy0yIGRpc2FibGVkOmN1cnNvci1ub3QtYWxsb3dlZCBkaXNhYmxlZDp0cmFuc2xhdGUteS0wIGRpc2FibGVkOm9wYWNpdHktNTAgJHtcbiAgICAgICAgZGFuZ2VyXG4gICAgICAgICAgPyBcImJvcmRlci1yZWQtMjAwIGJnLXJlZC01MCB0ZXh0LXJlZC02MDAgaG92ZXI6YmctcmVkLTEwMCBmb2N1czpyaW5nLXJlZC01MDAvMzAgZGFyazpib3JkZXItcmVkLTkwMCBkYXJrOmJnLXJlZC05NTAvNDAgZGFyazp0ZXh0LXJlZC0zMDAgZGFyazpob3ZlcjpiZy1yZWQtOTUwXCJcbiAgICAgICAgICA6IFwiYm9yZGVyLXNsYXRlLTIwMCBiZy13aGl0ZSB0ZXh0LXNsYXRlLTYwMCBob3ZlcjpiZy1zbGF0ZS0xMDAgZm9jdXM6cmluZy1zbGF0ZS0zMDAvNzAgZGFyazpib3JkZXItc2xhdGUtNzAwIGRhcms6Ymctc2xhdGUtOTUwIGRhcms6dGV4dC1zbGF0ZS0yMDAgZGFyazpob3ZlcjpiZy1zbGF0ZS04MDBcIlxuICAgICAgfWB9XG4gICAgICBkaXNhYmxlZD17ZGlzYWJsZWR9XG4gICAgICBvbkNsaWNrPXtvbkNsaWNrfVxuICAgICAgYXJpYS1sYWJlbD17bGFiZWx9XG4gICAgICB0aXRsZT17bGFiZWx9XG4gICAgPlxuICAgICAgPEljb24gc2l6ZT17MTR9IC8+XG4gICAgPC9idXR0b24+XG4gICk7XG59XG4iXSwiZmlsZSI6IkQ6L0Rlc2t0b3AvT25lRHJpdmUvRGVza3RvcC9OYXlhcGFua2ggaW50ZXJuc2hpcC9jbGllbnQvc3JjL2NvbXBvbmVudHMvVm9sdW50ZWVyVGFibGUuanN4In0=
