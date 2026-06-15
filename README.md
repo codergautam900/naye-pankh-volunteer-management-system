@@ -234,25 +234,40 @@ npm run dev          # Start frontend on http://localhost:5173
 
 ## 🎨 Screenshots
 
-### Desktop Views
+### Responsive Preview Gallery
 
-<p>
-  <img src="./docs/screenshots/home-desktop.png" alt="Home desktop" width="320" />
-  <img src="./docs/screenshots/register-desktop.png" alt="Registration desktop" width="320" />
-  <img src="./docs/screenshots/login-desktop.png" alt="Admin login desktop" width="320" />
-  <img src="./docs/screenshots/dashboard-desktop.png" alt="Admin dashboard desktop" width="320" />
-  <img src="./docs/screenshots/volunteers-desktop.png" alt="Volunteers table desktop" width="320" />
-</p>
-
-### Mobile Views
-
-<p>
-  <img src="./docs/screenshots/home-mobile.png" alt="Home mobile" width="140" />
-  <img src="./docs/screenshots/register-mobile.png" alt="Registration mobile" width="140" />
-  <img src="./docs/screenshots/login-mobile.png" alt="Admin login mobile" width="140" />
-  <img src="./docs/screenshots/dashboard-mobile.png" alt="Admin dashboard mobile" width="140" />
-  <img src="./docs/screenshots/volunteers-mobile.png" alt="Volunteers table mobile" width="140" />
-</p>
+<table>
+  <tr>
+    <th>Page</th>
+    <th>Desktop Preview</th>
+    <th>Mobile Preview</th>
+  </tr>
+  <tr>
+    <td><strong>Home</strong></td>
+    <td><img src="./docs/screenshots/home-desktop.png" alt="Home desktop" width="520" /></td>
+    <td><img src="./docs/screenshots/home-mobile.png" alt="Home mobile" width="180" /></td>
+  </tr>
+  <tr>
+    <td><strong>Registration</strong></td>
+    <td><img src="./docs/screenshots/register-desktop.png" alt="Registration desktop" width="520" /></td>
+    <td><img src="./docs/screenshots/register-mobile.png" alt="Registration mobile" width="180" /></td>
+  </tr>
+  <tr>
+    <td><strong>Admin Login</strong></td>
+    <td><img src="./docs/screenshots/login-desktop.png" alt="Admin login desktop" width="520" /></td>
+    <td><img src="./docs/screenshots/login-mobile.png" alt="Admin login mobile" width="180" /></td>
+  </tr>
+  <tr>
+    <td><strong>Dashboard</strong></td>
+    <td><img src="./docs/screenshots/dashboard-desktop.png" alt="Admin dashboard desktop" width="520" /></td>
+    <td><img src="./docs/screenshots/dashboard-mobile.png" alt="Admin dashboard mobile" width="180" /></td>
+  </tr>
+  <tr>
+    <td><strong>Volunteers</strong></td>
+    <td><img src="./docs/screenshots/volunteers-desktop.png" alt="Volunteers table desktop" width="520" /></td>
+    <td><img src="./docs/screenshots/volunteers-mobile.png" alt="Volunteers table mobile" width="180" /></td>
+  </tr>
+</table>
 
 ## 📁 Folder Structure
 
