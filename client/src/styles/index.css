@@ -57,7 +57,7 @@ select {
 }
 
 .btn-primary {
-  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-teal px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-teal-900/10 transition hover:-translate-y-0.5 hover:bg-teal-800 hover:shadow-teal-900/20 focus:outline-none focus:ring-2 focus:ring-brand-teal/30 focus:ring-offset-2 focus:ring-offset-white disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-60 dark:focus:ring-offset-slate-950;
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-teal px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-teal-900/10 transition hover:-translate-y-0.5 hover:bg-teal-800 hover:shadow-teal-900/20 focus:outline-none focus:ring-2 focus:ring-brand-teal/30 focus:ring-offset-2 focus:ring-offset-white disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-60 dark:border dark:border-teal-200/70 dark:bg-teal-300 dark:text-slate-950 dark:shadow-teal-400/20 dark:hover:bg-teal-200 dark:hover:shadow-teal-300/30 dark:focus:ring-teal-200/70 dark:focus:ring-offset-slate-950;
 }
 
 .btn-secondary {

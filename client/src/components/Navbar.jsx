@@ -57,7 +57,7 @@ export default function Navbar() {
           ) : (
             <NavLink to="/login" className="btn-primary px-3">
               <LogIn size={16} />
-              Login
+              Admin Login
             </NavLink>
           )}
           <button type="button" className="btn-secondary px-3" onClick={toggleTheme} aria-label="Toggle dark mode">
@@ -98,7 +98,7 @@ export default function Navbar() {
             ) : (
               <NavLink to="/login" className="btn-primary" onClick={closeMenu}>
                 <LogIn size={16} />
-                Login
+                Admin Login
               </NavLink>
             )}
           </div>
